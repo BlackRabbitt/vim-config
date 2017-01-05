@@ -5,13 +5,24 @@ set statusline=2
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 set cursorline
-map <C-o> :set paste<CR>
 
 autocmd BufNewFile,BufRead *.slim set ft=slim
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-nmap <F8> :TagbarToggle<CR>
+"shortcuts
+map \t :TagbarToggle<CR>
+map \s :w<CR>
+map \q :q<CR>
+map \b :BufExplorer<CR>
+map \v :set paste<CR>
+map \nv :set nopaste<CR>
+" comment shortcuts
+map \c gc
+map \nc gcgc
+" distraction free writing
+map \f :Goyo 100%<CR>
+map \nf :Goyo!<CR>
 
 syntax enable
 colorscheme nord
@@ -82,7 +93,6 @@ let g:gitgutter_sign_modified_removed = '~'
 "
 " bufexplorer configuration
 " Buffers - explore/next/previous: Alt-12, 12, Shift-12.
-nnoremap <silent> <F12> :BufExplorer<CR>
 "nnoremap <silent> <F12> :bn<CR>
 "nnoremap <silent> <S-F12> :bp<CR>
 "bufexplorer configuration ends here
@@ -102,18 +112,21 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
 Plugin 'raimondi/delimitmate'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'pangloss/vim-javascript'
+Plugin 'yggdroot/indentline'
+Plugin 'junegunn/goyo.vim'
+Plugin 'myusuf3/numbers.vim'
 call vundle#end()
