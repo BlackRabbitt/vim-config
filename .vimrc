@@ -9,6 +9,8 @@ set cursorline
 autocmd BufNewFile,BufRead *.slim set ft=slim
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+let g:syntastic_eruby_ruby_quiet_messages =
+    \ {'regex': 'possibly useless use of a variable in void context'}
 
 "shortcuts
 map \t :TagbarToggle<CR>
