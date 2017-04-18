@@ -12,6 +12,13 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 let g:syntastic_eruby_ruby_quiet_messages =
     \ {'regex': 'possibly useless use of a variable in void context'}
 
+" Standard shortcut keys
+map \a GVgg
+map <C-t> :tabnew <Enter>
+"map <C-i> >>
+map <C-W> :q! <Enter>
+map <C-h> :%s/
+
 "shortcuts
 map \t :TagbarToggle<CR>
 map \s :w<CR>
@@ -68,7 +75,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
  \ 'vimshell' : $HOME.'/.vimshell_hist',
  \ 'scheme' : $HOME.'/.gosh_completions'
  \ }
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " neocomplete configuration end here
 " airline configuration
 let g:airline#extensions#tabline#enabled = 1
@@ -107,7 +114,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'szw/vim-maximizer'
 Plugin 'yegappan/grep' "grep -R 'keyword' .
 Plugin 'Shougo/neocomplete.vim'
@@ -131,4 +138,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'yggdroot/indentline'
 Plugin 'junegunn/goyo.vim'
 Plugin 'myusuf3/numbers.vim'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'mhinz/vim-startify'
 call vundle#end()
