@@ -16,7 +16,7 @@ let g:syntastic_eruby_ruby_quiet_messages =
 map \a GVgg
 map <C-t> :tabnew <Enter>
 "map <C-i> >>
-map <C-W> :q! <Enter>
+"map <C-W> :q! <Enter>
 map <C-h> :%s/
 
 "shortcuts
@@ -75,7 +75,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
  \ 'vimshell' : $HOME.'/.vimshell_hist',
  \ 'scheme' : $HOME.'/.gosh_completions'
  \ }
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " neocomplete configuration end here
 " airline configuration
 let g:airline#extensions#tabline#enabled = 1
