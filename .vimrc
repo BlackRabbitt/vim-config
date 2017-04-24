@@ -5,6 +5,8 @@ set statusline=2
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 set cursorline
+set mouse=a
+set clipboard=unnamed
 
 autocmd BufNewFile,BufRead *.slim set ft=slim
 "Remove all trailing whitespace by pressing F5
@@ -109,6 +111,7 @@ let g:gitgutter_sign_modified_removed = '~'
 call vundle#begin()
 " " let Vundle manage Vundle, required
 " Put everything inside vundle#begin() and vundle#end() block.
+Plugin 'arcticicestudio/nord-vim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'ntpeters/vim-better-whitespace'
