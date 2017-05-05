@@ -143,4 +143,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'mhinz/vim-startify'
+Plugin 'elzr/vim-json'
+
+"Plugin 'wincent/command-t'
 call vundle#end()
