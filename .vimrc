@@ -11,8 +11,7 @@ set clipboard=unnamed
 autocmd BufNewFile,BufRead *.slim set ft=slim
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-let g:syntastic_eruby_ruby_quiet_messages =
-    \ {'regex': 'possibly useless use of a variable in void context'}
+let g:ruby_path = []
 
 " Standard shortcut keys
 map \a GVgg
@@ -56,19 +55,6 @@ set foldlevel=2
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
-" syntastic configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-set backspace=indent,eol,start
-highlight SyntasticWarning guifg=White guibg=Red ctermbg=1 ctermfg=15
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" sytastic configuration ends here.
-"
 " neocomplete configuration
 let g:neocomplete#enable_at_startup = 1
 " Define dictionary.
@@ -115,7 +101,6 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'szw/vim-maximizer'
