@@ -1,1 +1,0 @@
-/Users/BlackRabbitt/.spacemacs
