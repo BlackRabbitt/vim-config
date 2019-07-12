@@ -1,3 +1,20 @@
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp' " cache for ctrlp to make it fast
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" trailing whitespaces
+set wrap
+set linebreak
+" Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+" auto remove trailing whitespaces before save
+autocmd BufWritePre * %s/\s\+$//e
+
 set nocompatible              " be iMproved, required
 set number
 set laststatus=2
@@ -8,9 +25,9 @@ set cursorline
 set mouse=a
 set clipboard=unnamed
 
-autocmd BufNewFile,BufRead *.slim set ft=slim
-"Remove all trailing whitespace by pressing F5
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+autocmd InsertEnter,InsertLeave * set cul!
+"autocmd BufNewFile,BufRead *.slim set ft=slim
+
 let g:ruby_path = []
 
 " Standard shortcut keys
@@ -59,10 +76,10 @@ set hlsearch            " highlight matches
 let g:neocomplete#enable_at_startup = 1
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
- \ 'default' : '',
- \ 'vimshell' : $HOME.'/.vimshell_hist',
- \ 'scheme' : $HOME.'/.gosh_completions'
- \ }
+			\ 'default' : '',
+			\ 'vimshell' : $HOME.'/.vimshell_hist',
+			\ 'scheme' : $HOME.'/.gosh_completions'
+			\ }
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " neocomplete configuration end here
 " airline configuration
@@ -73,10 +90,10 @@ let g:airline_powerline_fonts = 1
 let g:Powerline_symbols='unicode'
 
 function! AirlineInit()
-  let g:airline_section_a = airline#section#create(['mode', ' *', 'branch', ' ', 'hunks'])
-  let g:airline_section_b = airline#section#create(['ffenc'])
-  let g:airline_section_y = 'Buffer#: %{bufnr("%")}'
-  let g:airline_section_z = airline#section#create_right(['%l', '%c'])
+	let g:airline_section_a = airline#section#create(['mode', ' *', 'branch', ' ', 'hunks'])
+	let g:airline_section_b = airline#section#create(['ffenc'])
+	let g:airline_section_y = 'Buffer#: %{bufnr("%")}'
+	let g:airline_section_z = airline#section#create_right(['%l', '%c'])
 endfunction
 autocmd VimEnter * call AirlineInit()
 " airline configuration ends here
